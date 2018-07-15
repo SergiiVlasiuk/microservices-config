@@ -7,10 +7,12 @@ eureka:
   instance:
     hostname: localhost
 
-    leaseRenewalIntervalInSeconds: 15
+    leaseRenewalIntervalInSeconds: 3
   client:
     registerWithEureka: false
     fetchRegistry: false
+    healthcheck:
+      enabled: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 ---
@@ -18,13 +20,13 @@ spring:
   profiles: docker
 eureka:
   server:
-    enableSelfPreservation: true
+    enableSelfPreservation: false
 #    enableSelfPreservation: false
   instance:
     hostname: discovery-service
 #    leaseRenewalIntervalInSeconds: 30
   client:
-    registerWithEureka: false
+    registerWithEureka: true
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ 
