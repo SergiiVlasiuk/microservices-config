@@ -7,7 +7,7 @@ eureka:
   instance:
     hostname: localhost
 
-    leaseRenewalIntervalInSeconds: 5
+    leaseRenewalIntervalInSeconds: 15
   client:
     registerWithEureka: false
     fetchRegistry: false
@@ -18,9 +18,11 @@ spring:
   profiles: docker
 eureka:
   server:
-    enableSelfPreservation: false 
+    enableSelfPreservation: true
+#    enableSelfPreservation: false
   instance:
     hostname: discovery-service
+#    leaseRenewalIntervalInSeconds: 30
   client:
     registerWithEureka: false
     fetchRegistry: false
