@@ -13,6 +13,8 @@ management:
         include: "*"
 
 zuul:
+  host:
+    socket-timeout-millis: 10000
   debug:
     request: true
   routes:
