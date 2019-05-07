@@ -14,24 +14,35 @@ management:
   security:
     enabled: false
 
+
+# Increase the Hystrix timeout to 60s (globally) - not sure if that is solution
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+
 zuul:
   host:
-    socket-timeout-millis: 10000
+    socket-timeout-millis: 60000
   debug:
     request: true
   routes:
     card-service:
-        path: /card-service/**
-        serviceId: card-service
-        stripPrefix: true
+      path: /card-service/**
+      serviceId: card-service
+      stripPrefix: false
     statement-service:
-        path: /statement-service/**
-        serviceId: statement-service
-        stripPrefix: true
+      path: /statement-service/**
+      serviceId: statement-service
+      stripPrefix: true
     card-statement-composite:
-        path: /card-statement-composite/**
-        serviceId: card-statement-composite
-        stripPrefix: true
+      path: /card-statement-composite/**
+      serviceId: card-statement-composite
+      stripPrefix: true
 ---
 spring:
   profiles: docker
