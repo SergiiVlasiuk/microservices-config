@@ -15,7 +15,7 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://discovery-service:8761/eureka/
+      defaultZone: http://discovery-service:8761/
 
 server:
   port: 8080
