@@ -9,6 +9,9 @@ spring:
   profiles: docker
   rabbitmq:
     host: rabbitmq
+turbine:
+  appConfig: card-statement,card,statement
+  combineHostPort: true
 eureka:
   instance:
     preferIpAddress: true
