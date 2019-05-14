@@ -21,10 +21,9 @@ spring:
 eureka:
   server:
     enableSelfPreservation: false
-#    enableSelfPreservation: false
   instance:
     hostname: discovery-service
-#    leaseRenewalIntervalInSeconds: 30
+    leaseRenewalIntervalInSeconds: 6
   client:
     registerWithEureka: true
     fetchRegistry: false
