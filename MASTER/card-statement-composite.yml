@@ -17,6 +17,8 @@ eureka:
     preferIpAddress: true
 #     leaseRenewalIntervalInSeconds: 1
 #     leaseExpirationDurationInSeconds: 2
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
@@ -24,6 +26,10 @@ eureka:
 #       enabled: true
 #     lease:
 #       duration: 5
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
 
 server:
   port: 8080
