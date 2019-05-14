@@ -11,12 +11,19 @@ spring:
   profiles: docker
   rabbitmq:
     host: rabbitmq
+
 eureka:
   instance:
     preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
       defaultZone: http://discovery-service:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
 
 server:
   port: 8080
