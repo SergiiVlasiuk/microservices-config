@@ -7,8 +7,6 @@ turbine:
 ---
 spring:
   profiles: docker
-  rabbitmq:
-    host: rabbitmq
 eureka:
   instance:
     preferIpAddress: true
